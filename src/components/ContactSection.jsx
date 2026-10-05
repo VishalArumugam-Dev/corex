@@ -31,7 +31,7 @@ const ContactSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-16 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden"
+      className="py-16 bg-[#050505] text-white relative overflow-hidden"
     >
       {/* 🌟 Background gold glow */}
       <div className="absolute inset-0">

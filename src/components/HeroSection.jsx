@@ -33,12 +33,12 @@ const HeroSection = () => {
   );
 
 
-  const heroBg = "https://png.pngtree.com/background/20240919/original/pngtree-3d-rendered-gym-equipment-against-dark-background-picture-image_10566187.jpg";
+  const heroBg = "/images/others/hero.png";
   return (
     <section
       className="relative min-h-screen flex flex-col justify-center items-center px-6 text-center overflow-hidden"
       style={{
-        background: `linear-gradient(to bottom, rgba(0,0,0,0.85) 70%, rgba(17,17,17,0.95) 100%), url('${heroBg}') center/cover no-repeat`,
+        background: `linear-gradient(to bottom, rgba(0,0,0,0.55) 70%, rgba(17,17,17,0.85) 100%), url('${heroBg}') center/cover no-repeat`,
         fontFamily: bodyFont,
       }}
     >

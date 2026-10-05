@@ -92,7 +92,7 @@ const VideoHeroSection = () => {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        background: "#000",
+        background: "#0B1220",
         fontFamily: bodyFont,
         color: white,
       }}
@@ -150,9 +150,9 @@ const VideoHeroSection = () => {
           <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 backdrop-blur-sm border border-yellow-400/20 transition-all duration-500 text-center hover:border-yellow-400/40">
             <div className="flex items-center justify-center space-x-4 mb-4">
               <img
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                src="/images/my/my.jpg"
                 alt="Prasad"
-                className="w-16 h-16 rounded-full border-3 border-yellow-400 shadow-lg"
+                className="w-40 h-40 shrink-0 rounded-full border-3 border-yellow-400 object-cover shadow-lg"
               />
               <div className="text-left">
                 <h3 className="font-bold text-xl text-white">Prasad</h3>
@@ -223,18 +223,17 @@ const VideoHeroSection = () => {
         >
           <div className="grid grid-cols-4 gap-3">
             {[
-              { number: "16", label: "Slots", color: "text-yellow-400", icon: "🎯" },
-              { number: "77+", label: "Students", color: "text-yellow-400", icon: "👥" },
-              { number: "87%", label: "Success", color: "text-green-400", icon: "✅" },
-              { number: "4.3/5", label: "Rating", color: "text-yellow-400", icon: "⭐" }
+              { number: "16", label: "Slots", color: "text-yellow-400" },
+              { number: "77+", label: "Students", color: "text-yellow-400" },
+              { number: "87%", label: "Success", color: "text-yellow-400" },
+              { number: "4.3/5", label: "Rating", color: "text-yellow-400" }
             ].map((stat, index) => (
               <div
                 key={index}
                 className="text-center bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-xl p-4 backdrop-blur-sm border border-yellow-400/20 transition-all duration-700 transform translate-y-0 opacity-100 hover:border-yellow-400/40 hover:scale-[1.02]"
               >
-                <div className="text-2xl mb-1">{stat.icon}</div>
-                <div className={`text-2xl font-bold ${stat.color} mb-1`}>{stat.number}</div>
-                <div className="text-xs text-gray-400 font-medium">{stat.label}</div>
+                <div className={`text-3xl font-black ${stat.color} mb-2`}>{stat.number}</div>
+                <div className="text-xs uppercase tracking-[0.18em] text-gray-400 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>

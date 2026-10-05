@@ -96,9 +96,9 @@ const FeaturesSection = () => {
     <section
       ref={sectionRef}
       id="features"
-      className="py-20 relative overflow-hidden"
+      className="scroll-mt-[82px] py-20 relative overflow-hidden"
       style={{
-        background: "#000",
+        background: "#050505",
         fontFamily: bodyFont,
         color: white,
       }}
@@ -179,11 +179,11 @@ const FeaturesSection = () => {
         </div>
 
         {/* Features List */}
-        <div className="space-y-8 mb-20">
+        <div className="space-y-4 mb-20">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group flex items-start transform transition-all duration-500 ease-out hover:translate-x-1 hover:scale-[1.02] ${
+              className={`group flex items-start rounded-2xl border border-yellow-400/15 bg-gradient-to-br from-[#101010] to-[#080808] p-5 transition-all duration-300 hover:border-yellow-400/35 hover:shadow-[0_0_22px_rgba(197,161,0,0.08)] ${
                 itemsVisible[index]
                   ? "translate-y-0 opacity-100"
                   : "translate-y-16 opacity-0"

@@ -96,7 +96,7 @@ const FooterSection = () => {
   return (
     <footer 
       ref={sectionRef}
-      className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 relative overflow-hidden"
+      className="bg-gradient-to-br from-[#101820] via-[#151B25] to-[#0B1119] text-white py-16 relative overflow-hidden"
     >
       {/* 3D Background Effects */}
       <div className="absolute inset-0">

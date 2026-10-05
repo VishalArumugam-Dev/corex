@@ -103,7 +103,7 @@ const ProgramSection = () => {
       tags: ["Assessment", "Weeks 1-4"],
       side: "left",
       color: "from-[#C5A100] to-[#FFE085]",
-      image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      image: "/images/program/week1-4.JPG"
     },
     {
       weeks: "5-8",
@@ -118,7 +118,7 @@ const ProgramSection = () => {
       tags: ["Progress", "Weeks 5-8"],
       side: "right",
       color: "from-[#C5A100] to-[#FFE085]",
-      image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      image: "/images/program/week5-8.JPG"
     },
     {
       weeks: "9-12",
@@ -127,12 +127,13 @@ const ProgramSection = () => {
       description: "Leveraging progressive overload for bigger changes.",
       results: [
         "Maximizing Results and Performance",
-        "Can notice bigger changes on the progressive overloading"
+        "Can notice bigger changes on the progressive overloading",
+        "Build strength through structured progressive overload"
       ],
       tags: ["Peak", "Weeks 9-12"],
       side: "left",
       color: "from-[#C5A100] to-[#FFE085]",
-      image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      image: "/images/program/week9-12.JPG"
     },
     {
       weeks: "13-16",
@@ -147,7 +148,7 @@ const ProgramSection = () => {
       tags: ["Sustain", "Weeks 13-16"],
       side: "right",
       color: "from-[#C5A100] to-[#FFE085]",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      image: "/images/program/week13-16.png"
     }
   ];
 
@@ -155,8 +156,14 @@ const ProgramSection = () => {
     <section
       ref={sectionRef}
         id="program"
-      className="py-16 bg-black text-white relative overflow-hidden"
+      className="scroll-mt-[82px] py-16 bg-[#080A0C] text-white relative overflow-hidden"
     >
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/program/program.png')" }}
+      />
+
       {/* Minimal gold floating elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-1 h-1 bg-[#C5A100] rounded-full animate-pulse"></div>
@@ -167,7 +174,7 @@ const ProgramSection = () => {
         <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-[#FFE085] rounded-full animate-ping"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <div
           className={`text-center mb-16 transform transition-all duration-1000 ease-out ${
@@ -218,20 +225,20 @@ const ProgramSection = () => {
             }`}
           ></div>
 
-          <div className="space-y-16">
+          <div className="space-y-8 md:space-y-10">
             {phases.map((phase, index) => (
               <div key={index} className="relative flex items-center">
                 {phase.side === "left" ? (
                   <>
                     <div
-                      className={`flex-1 pr-8 text-right transform transition-all duration-1000 ease-out ${
+                      className={`flex-1 pr-4 text-right transform transition-all duration-1000 ease-out ${
                         timelineVisible[index] ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'
                       }`}
                       style={{ transitionDelay: `${index * 200 + 600}ms` }}
                     >
                       <div
-                        className={`bg-white rounded-2xl p-6 shadow-2xl cursor-pointer transition-all duration-300 border-2 backdrop-blur-sm relative overflow-hidden hover:scale-[1.02] hover:shadow-xl ${
-                          activePhase === index ? 'border-[#C5A100]' : 'border-gray-200/50'
+                        className={`relative overflow-hidden rounded-2xl border p-5 md:p-6 cursor-pointer bg-[#111111]/95 shadow-[0_15px_40px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C5A100]/60 hover:shadow-[0_0_30px_rgba(197,161,0,0.08)] ${
+                          activePhase === index ? 'border-[#C5A100]' : 'border-[#C5A100]/30'
                         }`}
                         onClick={() => setActivePhase(index)}
                       >
@@ -242,15 +249,15 @@ const ProgramSection = () => {
                         ></div>
 
                         <div className="relative">
-                          <h3 className="text-2xl font-bold mb-2 text-gray-900">{phase.title}</h3>
-                          <h4 className="text-lg font-semibold text-[#C5A100] mb-3">{phase.subtitle}</h4>
-                          <p className="text-gray-600 mb-4">{phase.description}</p>
+                          <h3 className="text-xl font-extrabold mb-2 text-white">{phase.title}</h3>
+                          <h4 className="text-base font-bold text-[#FFE085] mb-3">{phase.subtitle}</h4>
+                          <p className="text-sm text-gray-300 mb-4">{phase.description}</p>
 
                           <div className="space-y-2 mb-4">
                             {phase.results.map((result, resultIndex) => (
                               <div key={resultIndex} className="flex items-center justify-end space-x-2">
-                                <span className="text-sm text-gray-700">{result}</span>
-                                <div className="w-4 h-4 bg-[#C5A100] rounded-full flex items-center justify-center">
+                                <span className="text-xs text-gray-300">{result}</span>
+                                <div className="w-3.5 h-3.5 shrink-0 bg-[#C5A100] rounded-full flex items-center justify-center">
                                   <CheckIcon />
                                 </div>
                               </div>
@@ -261,7 +268,7 @@ const ProgramSection = () => {
                             {phase.tags.map((tag, tagIndex) => (
                               <span
                                 key={tagIndex}
-                                className="bg-[#C5A100]/20 text-[#C5A100] px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm"
+                                className="rounded-full border border-[#C5A100]/30 bg-[#C5A100]/10 px-3 py-1 text-xs font-semibold text-[#FFE085]"
                               >
                                 {tag}
                               </span>
@@ -280,18 +287,18 @@ const ProgramSection = () => {
                     </div>
 
                     <div
-                      className={`flex-1 pl-8 transform transition-all duration-1000 ease-out ${
+                      className={`flex-1 pl-4 transform transition-all duration-1000 ease-out ${
                         timelineVisible[index] ? 'translate-x-0 opacity-100' : 'translate-x-16 opacity-0'
                       }`}
                       style={{ transitionDelay: `${index * 200 + 800}ms` }}
                     >
-                      <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                      <div className="relative mx-auto flex h-64 w-full max-w-none items-center justify-center overflow-hidden rounded-2xl border border-[#C5A100]/25 bg-[#111] shadow-2xl sm:h-72 lg:h-80">
                         <img
                           src={phase.image}
                           alt={phase.title}
-                          className="w-full h-80 object-cover"
+                          className="h-full w-full object-contain"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                         <div className="absolute bottom-4 left-4 text-white">
                           <div className="text-lg font-bold">{phase.title}</div>
                           <div className="text-sm opacity-90">Weeks {phase.weeks}</div>
@@ -302,18 +309,18 @@ const ProgramSection = () => {
                 ) : (
                   <>
                     <div
-                      className={`flex-1 pr-8 transform transition-all duration-1000 ease-out ${
+                      className={`flex-1 pr-4 transform transition-all duration-1000 ease-out ${
                         timelineVisible[index] ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'
                       }`}
                       style={{ transitionDelay: `${index * 200 + 800}ms` }}
                     >
-                      <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                      <div className="relative mx-auto flex h-64 w-full max-w-none items-center justify-center overflow-hidden rounded-2xl border border-[#C5A100]/25 bg-[#111] shadow-2xl sm:h-72 lg:h-80">
                         <img
                           src={phase.image}
                           alt={phase.title}
-                          className="w-full h-80 object-cover"
+                          className="h-full w-full object-contain"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                         <div className="absolute bottom-4 right-4 text-white text-right">
                           <div className="text-lg font-bold">{phase.title}</div>
                           <div className="text-sm opacity-90">Weeks {phase.weeks}</div>
@@ -330,14 +337,14 @@ const ProgramSection = () => {
                     </div>
 
                     <div
-                      className={`flex-1 pl-8 transform transition-all duration-1000 ease-out ${
+                      className={`flex-1 pl-4 transform transition-all duration-1000 ease-out ${
                         timelineVisible[index] ? 'translate-x-0 opacity-100' : 'translate-x-16 opacity-0'
                       }`}
                       style={{ transitionDelay: `${index * 200 + 600}ms` }}
                     >
                       <div
-                        className={`bg-white rounded-2xl p-6 shadow-2xl cursor-pointer transition-all duration-300 border-2 backdrop-blur-sm relative overflow-hidden hover:scale-[1.02] hover:shadow-xl ${
-                          activePhase === index ? 'border-[#C5A100]' : 'border-gray-200/50'
+                        className={`relative overflow-hidden rounded-2xl border p-5 md:p-6 cursor-pointer bg-[#111111]/95 shadow-[0_15px_40px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C5A100]/60 hover:shadow-[0_0_30px_rgba(197,161,0,0.08)] ${
+                          activePhase === index ? 'border-[#C5A100]' : 'border-[#C5A100]/30'
                         }`}
                         onClick={() => setActivePhase(index)}
                       >
@@ -348,9 +355,9 @@ const ProgramSection = () => {
                         ></div>
 
                         <div className="relative">
-                          <h3 className="text-2xl font-bold mb-2 text-gray-900">{phase.title}</h3>
-                          <h4 className="text-lg font-semibold text-[#C5A100] mb-3">{phase.subtitle}</h4>
-                          <p className="text-gray-600 mb-4">{phase.description}</p>
+                          <h3 className="text-xl font-extrabold mb-2 text-white">{phase.title}</h3>
+                          <h4 className="text-base font-bold text-[#FFE085] mb-3">{phase.subtitle}</h4>
+                          <p className="text-sm text-gray-300 mb-4">{phase.description}</p>
 
                           <div className="space-y-2 mb-4">
                             {phase.results.map((result, resultIndex) => (
@@ -358,7 +365,7 @@ const ProgramSection = () => {
                                 <div className="w-4 h-4 bg-[#C5A100] rounded-full flex items-center justify-center">
                                   <CheckIcon />
                                 </div>
-                                <span className="text-sm text-gray-700">{result}</span>
+                                <span className="text-xs text-gray-300">{result}</span>
                               </div>
                             ))}
                           </div>
@@ -367,7 +374,7 @@ const ProgramSection = () => {
                             {phase.tags.map((tag, tagIndex) => (
                               <span
                                 key={tagIndex}
-                                className="bg-[#C5A100]/20 text-[#C5A100] px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm"
+                                className="rounded-full border border-[#C5A100]/30 bg-[#C5A100]/10 px-4 py-2 text-sm font-semibold text-[#FFE085]"
                               >
                                 {tag}
                               </span>

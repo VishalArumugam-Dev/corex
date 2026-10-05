@@ -51,7 +51,7 @@ const ProblemSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-black text-white relative overflow-hidden"
+      className="py-20 bg-[#111820] text-white relative overflow-hidden"
       style={{ fontFamily: bodyFont }}
     >
       {/* Gold/Yellow Background Effects */}
@@ -211,12 +211,12 @@ fontFamily: headingFont,
 
             {/* Right Side - Image */}
             <div className="relative lg:order-last order-first">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[3/2] w-full rounded-3xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-yellow-500/15 z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  src="/images/my/single.jpg"
                   alt="Fitness Trainer"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-gradient-to-br from-yellow-500/20 to-yellow-600/30 rounded-full blur-3xl" />
               </div>

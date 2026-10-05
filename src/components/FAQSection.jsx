@@ -111,7 +111,7 @@ import React, { useState, useEffect, useRef } from 'react';
     <section 
       ref={sectionRef}
       id="faq" 
-      className="py-16 bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white relative overflow-hidden"
+      className="scroll-mt-[82px] py-16 bg-gradient-to-br from-[#1B2430] via-[#151C26] to-[#101720] text-white relative overflow-hidden"
     >
       <div className="absolute inset-0">
         <div className={`absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-[#C5A100]/15 to-[#FFE085]/15 rounded-full mix-blend-multiply filter blur-3xl transition-all duration-2000 ${
